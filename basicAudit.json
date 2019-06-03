@@ -1,0 +1,110 @@
+{
+	"name": "Basic",
+	"description": "",
+	"rules": [
+		{
+			"name": "DNS",
+			"description": "",
+			"conceptItemId": null,
+			"os": "",
+			"scope": "",
+			"forbidden": [
+				"ip domain name vpoc.local"
+			],
+			"required": [
+				"ip domain name gluware.poc",
+				"ip name-server 10.1.255.53",
+				"ip name-server 10.1.155.53"
+			]
+		},
+		{
+			"name": "NTP",
+			"description": "",
+			"conceptItemId": null,
+			"os": "",
+			"scope": "",
+			"forbidden": [],
+			"required": [
+				"clock timezone GMT 8 0",
+				"ntp server 10.1.255.123",
+				"ntp source .+"
+			]
+		},
+		{
+			"name": "SNMP",
+			"description": "",
+			"conceptItemId": null,
+			"os": "",
+			"scope": "",
+			"forbidden": [],
+			"required": [
+				"snmp-server community public RO",
+				"snmp-server community private RW",
+				"snmp-server host 10.1.255.161",
+				"snmp-server host 10.1.155.161"
+			]
+		},
+		{
+			"name": "Syslog",
+			"description": "",
+			"conceptItemId": null,
+			"os": "",
+			"scope": "",
+			"forbidden": [
+				"logging host 10.2.125.123"
+			],
+			"required": [
+				"logging host 10.1.255.50",
+				"logging host 10.1.155.50"
+			]
+		},
+		{
+			"name": "Services",
+			"description": "",
+			"conceptItemId": null,
+			"os": "",
+			"scope": "",
+			"forbidden": [],
+			"required": [
+				"service password-encryption"
+			]
+		},
+		{
+			"name": "VTY",
+			"description": "",
+			"conceptItemId": "ce4e1788-1c09-4bb2-a7cf-6c8245128686",
+			"os": "",
+			"scope": "",
+			"forbidden": [
+				"transport input telnet",
+				"transport input /w.* telnet"
+			],
+			"required": [
+				"transport input ssh"
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"conceptItemId": null,
+			"os": "",
+			"scope": "",
+			"forbidden": [
+				"username \\w.* password \\w.*",
+				"enable password"
+			],
+			"required": []
+		},
+		{
+			"name": "Console",
+			"description": "",
+			"conceptItemId": "ce4e1788-1c09-4bb2-a7cf-6c8245128686",
+			"os": "",
+			"scope": "con",
+			"forbidden": [],
+			"required": [
+				"exec-timeout 35"
+			]
+		}
+	]
+}
